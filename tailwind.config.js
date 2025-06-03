@@ -3,7 +3,7 @@ module.exports = {
     // https://tailwindcss.com/docs/content-configuration
     './*.php',
     './inc/**/*.php',
-    './templates/**/*.php',
+    './templates/*.php',
     './safelist.txt'
     //'./**/*.php', // recursive search for *.php (be aware on every file change it will go even through /node_modules which can be slow, read doc)
   ],
@@ -14,7 +14,13 @@ module.exports = {
     //}
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+              'navy-deep': '#1a1f4d',
+              'navy-light': '#2a3378',
+              'blue-accent': '#4f8cd6'
+          }
+    }
   },
   plugins: []
 }

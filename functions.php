@@ -13,5 +13,7 @@ define('IS_VITE_DEVELOPMENT', true);
 
 
 include "inc/inc.vite.php";
+include "inc/hooks.php";
 
+include "options/menus.php";
 
