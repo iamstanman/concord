@@ -8,7 +8,7 @@
     <?php if ( $headerCode = get_field('site_custom_code_header', 'options') ) { echo $headerCode; } ?>
     <?php wp_head() ?>
 </head>
-<body <?php body_class('flex flex-col h-screen') ?>>
+<body <?php body_class('flex flex-col h-screen bg-navy-deep') ?>>
 <?php wp_body_open(); ?>
 
     <!-- <header class="flex-0 bg-slate-100 px-4 border shadow-md">
@@ -23,8 +23,8 @@
     </header> -->
 
     <header class="bg-navy-deep">
-        <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-            <a href="<?php echo home_url() ?>" class="-m-1.5 p-1.5">
+        <nav class="mx-auto w-full flex items-center justify-between h-[100px] border-b-[1px] border-blue-accent" aria-label="Global">
+            <a href="<?php echo home_url() ?>" class="pl-[50px]">
             <span class="sr-only">Concord Public Opinion Partners</span>
             <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
             </a>
@@ -42,7 +42,7 @@
                     if ( has_nav_menu( 'header-main-menu' ) ) {
                         wp_nav_menu( array(
                             'theme_location'  => 'header-main-menu',
-                            'menu_class'  => 'hidden lg:flex lg:gap-x-12',
+                            'menu_class'  => 'hidden lg:flex lg:items-center uppercase lg:gap-x-12',
                             'container'       => 'a',
                             'container_class' => 'people',
                             'depth'           => 0,
@@ -54,10 +54,13 @@
                 <!-- 
                 // TODO: Style the button since you have it pulled in
                 -->
-                <?php $header_button_link = get_field( 'header_button_link', 'option' ); ?>
-                <?php if ( $header_button_link ) : ?>
-                    <a class="text-blue-accent hover:text-white transition-colors duration-200 font-medium" href="<?php echo esc_url( $header_button_link['url'] ); ?>" target="<?php echo esc_attr( $header_button_link['target'] ); ?>"><?php echo esc_html( $header_button_link['title'] ); ?></a>
-                <?php endif; ?>
+                <div class="header_actions">
+                    <?php $header_button_link = get_field( 'header_button_link', 'option' ); ?>
+                    <?php if ( $header_button_link ) : ?>
+                        <a class="text-blue-accent hover:text-navy-deep hover:bg-blue-accent transition-colors duration-200 font-medium block py-[39px] pl-[50px] pr-[56px] uppercase border-l-[1px] border-blue-accent" href="<?php echo esc_url( $header_button_link['url'] ); ?>" target="<?php echo esc_attr( $header_button_link['target'] ); ?>"><?php echo esc_html( $header_button_link['title'] ); ?></a>
+                    <?php endif; ?>
+                </div>
+                
             </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
@@ -95,5 +98,5 @@
     </header>
 
 
-    <main class="flex-grow px-4 py-4">
+    <main class="flex-grow w-full flex-shrink-0">
 

@@ -14,6 +14,7 @@ define('IS_VITE_DEVELOPMENT', true);
 
 include "inc/inc.vite.php";
 include "inc/hooks.php";
+include "inc/svg-support.php";
 
 include "options/menus.php";
 include "options/post-types.php";

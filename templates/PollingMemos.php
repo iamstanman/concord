@@ -1,14 +1,13 @@
 <?php
 /**
- * Template Name: About Page
+ * Template Name: Polling Memos
  */
-
 ?>
 
 <?php get_header(); ?>
 
 <section>
-    <h1 class="text-white text-xl">About Page</h1>
+    <h1>Page: <?php the_title(); ?></h1>
 </section>
 
 <?php get_footer(); ?>
