@@ -16,4 +16,5 @@ include "inc/inc.vite.php";
 include "inc/hooks.php";
 
 include "options/menus.php";
+include "options/post-types.php";
 

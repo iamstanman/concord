@@ -16,9 +16,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-              'navy-deep': '#1a1f4d',
-              'navy-light': '#2a3378',
-              'blue-accent': '#4f8cd6'
+              'navy-deep': '#020449',
+              'blue-accent': '#65BBFF'
           }
     }
   },
