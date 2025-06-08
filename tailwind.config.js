@@ -15,6 +15,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        libre:["Libre", "serif"],
+        mont: ["Montserrat", "sans-serif"]
+      },
       colors: {
               'navy-deep': '#020449',
               'blue-accent': '#65BBFF'

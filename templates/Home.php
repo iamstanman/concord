@@ -6,8 +6,8 @@
 
 <?php get_header(); ?>
 
-<section>
-    <h1>Page: <?php the_title(); ?></h1>
+<section class="flex justify-center items-center">
+    <h1 class="text-3xl font-libre italic font-normal text-white">Page: <?php the_title(); ?></h1>
 </section>
 
 <?php get_footer(); ?>

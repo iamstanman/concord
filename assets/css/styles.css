@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss/base";
 /*
  * uncomment if adding custom base styles
@@ -21,3 +22,22 @@
 body.admin-bar {
     max-height: calc(100vh - 32px);
 }
+
+#menu-header-main-menu li a:hover {
+    @apply text-blue-accent;
+}
+
+#menu-footer-main-menu-1 li a {
+    @apply text-white uppercase;
+}
+
+#menu-footer-main-menu-1 li a:hover {
+    @apply text-blue-accent;
+}
+
+/* Classes for font styles */
+.nav-font{
+    @apply font-mont font-semibold text-lg;
+}
+
+/* Subscribe CTA */

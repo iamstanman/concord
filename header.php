@@ -8,7 +8,10 @@
     <?php if ( $headerCode = get_field('site_custom_code_header', 'options') ) { echo $headerCode; } ?>
     <?php wp_head() ?>
 </head>
-<body <?php body_class('flex flex-col h-screen bg-navy-deep') ?>>
+<body <?php body_class('flex flex-col h-screen bg-navy-deep') ?>
+<?php $header_logo = get_field( 'header_logo', 'option' ); ?>
+<?php $size = 'full'; ?>  
+>
 <?php wp_body_open(); ?>
 
     <!-- <header class="flex-0 bg-slate-100 px-4 border shadow-md">
@@ -24,14 +27,15 @@
 
     <header class="bg-navy-deep">
         <nav class="mx-auto w-full flex items-center justify-between h-[100px] border-b-[1px] border-blue-accent" aria-label="Global">
-            <a href="<?php echo home_url() ?>" class="pl-[50px]">
-            <span class="sr-only">Concord Public Opinion Partners</span>
-            <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
+            <a href="<?php echo home_url() ?>" class="pl-[20px] lg:pl-[50px]">
+                <span class="sr-only">Concord Public Opinion Partners</span>
+                <img class="w-auto h-14" src="<?php bloginfo( 'stylesheet_directory'); ?>/assets/img/header_logo.svg" alt="<?php bloginfo( 'name' ); ?>" />
             </a>
-            <div class="flex lg:hidden">
-            <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <!-- mobile menu -->
+            <div class="flex lg:hidden border-l-[1px] border-blue-accent h-full">
+            <button type="button" class="inline-flex items-center justify-center rounded-md p-2.5 text-white w-full">
                 <span class="sr-only">Open main menu</span>
-                <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                <svg class="w-16" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </button>
@@ -42,18 +46,15 @@
                     if ( has_nav_menu( 'header-main-menu' ) ) {
                         wp_nav_menu( array(
                             'theme_location'  => 'header-main-menu',
-                            'menu_class'  => 'hidden lg:flex lg:items-center uppercase lg:gap-x-12',
-                            'container'       => 'a',
-                            'container_class' => 'people',
+                            'menu_class'      => 'hidden lg:flex lg:items-center uppercase lg:gap-x-12 nav-font',
+                            'container'       => '',
+                            'container_class' => '',
                             'depth'           => 0,
                         ) );
                     }
                 ?>
                 
                 <!-- Contact Button in Header -->
-                <!-- 
-                // TODO: Style the button since you have it pulled in
-                -->
                 <div class="header_actions">
                     <?php $header_button_link = get_field( 'header_button_link', 'option' ); ?>
                     <?php if ( $header_button_link ) : ?>
@@ -64,37 +65,7 @@
             </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
-        <div class="lg:hidden" role="dialog" aria-modal="true">
-            <!-- Background backdrop, show/hide based on slide-over state. -->
-            <div class="fixed inset-0 z-10"></div>
-            <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-between">
-                <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
-                <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
-                </a>
-                <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                <span class="sr-only">Close menu</span>
-                <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-                </button>
-            </div>
-            <div class="mt-6 flow-root">
-                <div class="-my-6 divide-y divide-gray-500/10">
-                <div class="space-y-2 py-6">
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Product</a>
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Features</a>
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Marketplace</a>
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Company</a>
-                </div>
-                <div class="py-6">
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
+        
     </header>
 
 
